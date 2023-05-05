@@ -55,13 +55,3 @@ ratk = 1
 rdefe = 2
 rheal = 3
 
-move = input('What move do you want to do? (Ex. attack, defend, heal) ')
-if move == "attack":
-    zhp = zhp - attack
-    print("Zombie hp is")
-    print(zhp)
-elif move == "heal":
-    hp = hp + heal
-    print(hp)
-else:
-    
