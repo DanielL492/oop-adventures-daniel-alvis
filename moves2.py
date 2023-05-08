@@ -37,20 +37,19 @@ attack = 1
 defend = 2
 heal = 3
 
-zhp = 20
-zatk = 1
-zdefe = 2
-zheal = 3
+zhp = 15
+zatk = 2
+zdefe = 4
 
 ehp = 25 
-eatk = 1
-edefe = 2
-eheal = 3
+eatk = 4
+edefe = 5
+eheal = 1
 
 rhp = 30
-ratk = 1
-rdefe = 2
-rheal = 3
+ratk = 8
+rdefe = 6
+rheal = 2
 
 move = input('What move do you want to do? (Ex. attack, defend, heal) ')
 if move == "attack":

@@ -30,7 +30,8 @@ class ravager(mob):
     def __str__(self):
         return f"{self.rhp}, {self.ratk}, {self.rdefe}, {self.rheal}"
     
-print zombie()
+print (zombie())
+
 hp = 20
 atk = 4
 defe = 6
@@ -40,28 +41,17 @@ attack = 1
 defend = 2
 heal = 3
 
-zhp = 20
-zatk = 1
-zdefe = 2
-zheal = 3
+zhp = 15
+zatk = 2
+zdefe = 4
 
 ehp = 25 
-eatk = 1
-edefe = 2
-eheal = 3
+eatk = 4
+edefe = 5
+eheal = 1
 
 rhp = 30
-ratk = 1
-rdefe = 2
-rheal = 3
+ratk = 8
+rdefe = 6
+rheal = 2
 
-move = input('What move do you want to do? (Ex. attack, defend, heal) ')
-if move == "attack":
-    zhp = zhp - attack
-    print("Zombie hp is")
-    print(zhp)
-elif move == "heal":
-    hp = hp + heal
-    print(hp)
-else:
-    
