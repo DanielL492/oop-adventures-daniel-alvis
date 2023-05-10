@@ -48,31 +48,40 @@ rhp = 30
 ratk = 8
 rdefe = 6
 rheal = 2
-
-fight = input('Do you want to fight? ')
-if fight == "yes":
-    while zhp >= 0:
-        print('You are fighting the zombie')
-        move = input('What move do you want to do? (Ex. attack, defend, heal) ')
-        if move == "attack":
-            zhp = zhp - atk
-            atk = 4
-            print("Zombie hp is")
-            print(zhp)
-        elif move == "heal":
-            hp = hp + heal
-            print("You have healed. Your hp is now:")
-            print(hp)
-        if int(x) == 1:
-            hp = hp - zatk
-            print('Zombie has hit you')
-            print('Your hp is now:')
-            print(hp)
-        if int(x) == 2:
-            hp = hp - zatk
-            print('Zombie has hit you')
-            print('Your hp is now:')
-            print(hp)
-        if int(x) == 3:
-            atk = atk - zdefe
-            print('Zombie has defended itself')
+while hp >= 0:
+    fight = input('Do you want to fight? ')
+    if fight == "yes":
+        while zhp >= 0:
+            print('You are fighting the zombie')
+            move = input('What move do you want to do? (Ex. attack, defend, heal) ')
+            if move == "attack":
+                if int(x) == 1:
+                    atk = atk - zdefe
+                    zhp = zhp - zatk
+                    print('Zombie has defended itself.')
+                    print("Zombie hp is now:")
+                    print(zhp)
+                if int(x) == 2 or 3:
+                    hp = hp - zatk
+                    print('Zombie has hit you')
+                    print('Your hp is now:')
+                    print(hp)
+            elif move == "heal":
+                hp = hp + heal
+                print("You have healed. Your hp is now:")
+                print(hp)
+                if int(x) == 1:
+                    print('Zombie has defended itself.')
+                    print("Zombie hp is now:")
+                    print(zhp)
+                else:
+                    hp = hp - zatk
+                    print('Zombie has hit you')
+                    print('Your hp is now:')
+                    print(hp)
+                if int(x) == 2 or 3:
+                    hp = hp - zatk
+                    print('Zombie has hit you')
+                    print('Your hp is now:')
+                    print(hp)
+      
