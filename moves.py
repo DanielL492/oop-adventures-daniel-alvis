@@ -1,5 +1,5 @@
 import random
-x = random.randint(1, 3)
+x = random.randint(1,3)
 class mob:
     def __init__(self, name):
         self.name = name
@@ -48,6 +48,9 @@ rhp = 30
 ratk = 8
 rdefe = 6
 rheal = 2
+
+
+
 while hp >= 0:
     fight = input('Do you want to fight? ')
     if fight == "yes":
@@ -57,11 +60,14 @@ while hp >= 0:
             if move == "attack":
                 if int(x) == 1:
                     atk = atk - zdefe
-                    zhp = zhp - zatk
+                    zhp = zhp - atk
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zhp)
-                if int(x) == 2 or 3:
+                elif int(x) == 2 or 3:
+                    zhp = zhp - atk
+                    print("Zombie hp is")
+                    print(zhp)
                     hp = hp - zatk
                     print('Zombie has hit you')
                     print('Your hp is now:')
@@ -74,11 +80,6 @@ while hp >= 0:
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zhp)
-                else:
-                    hp = hp - zatk
-                    print('Zombie has hit you')
-                    print('Your hp is now:')
-                    print(hp)
                 if int(x) == 2 or 3:
                     hp = hp - zatk
                     print('Zombie has hit you')
