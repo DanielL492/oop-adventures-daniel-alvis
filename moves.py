@@ -1,5 +1,6 @@
 import random
 x = random.randint(1,3)
+
 class mob:
     def __init__(self, name):
         self.name = name
@@ -35,7 +36,7 @@ atk = 5
 defe = 6
 heal = 2
 
-zhp = 15
+zhp = 16
 zatk = 2
 zdefe = 4
 
@@ -58,12 +59,15 @@ while hp >= 0:
             print('You are fighting the zombie')
             move = input('What move do you want to do? (Ex. attack, defend, heal) ')
             if move == "attack":
+                print("X IS:")
+                print(int(x))
                 if int(x) == 1:
                     atk = atk - zdefe
                     zhp = zhp - atk
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zhp)
+                    x = random.randint(1,3)
                 elif int(x) == 2 or 3:
                     zhp = zhp - atk
                     print("Zombie hp is")
@@ -72,7 +76,10 @@ while hp >= 0:
                     print('Zombie has hit you')
                     print('Your hp is now:')
                     print(hp)
+                    x = random.randint(1,3)
             elif move == "heal":
+                print("X IS:")
+                print(int(x))
                 hp = hp + heal
                 print("You have healed. Your hp is now:")
                 print(hp)
@@ -80,9 +87,12 @@ while hp >= 0:
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zhp)
-                if int(x) == 2 or 3:
+                    x = random.randint(1,3)
+                elif int(x) == 2 or 3:
                     hp = hp - zatk
                     print('Zombie has hit you')
                     print('Your hp is now:')
                     print(hp)
-      
+                    x = random.randint(1,3)
+
+print("SHELLPOZO. Try again, or are you a pu-")
