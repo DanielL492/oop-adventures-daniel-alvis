@@ -31,23 +31,23 @@ class ravager(mob):
         return f"{self.rhp}, {self.ratk}, {self.rdefe}, {self.rheal}"
     
 hp = 20
-atk = 4
+atk = 5
 defe = 6
 heal = 3
 
-zhp = 15
-zatk = 2
-zdefe = 4
+zhp = 16
+zatk = 4
+zdefe = 5
 
-ehp = 25 
-eatk = 4
-edefe = 5
-eheal = 1
+ehp = 26
+eatk = 6
+edefe = 6
+eheal = 2
 
-rhp = 30
-ratk = 8
-rdefe = 6
-rheal = 2
+rhp = 32
+ratk = 10
+rdefe = 8
+rheal = 4
 
 fight = input('Do you want to fight')
 print('You are fighting the zombie')

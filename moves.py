@@ -94,5 +94,8 @@ while hp >= 0:
                     print('Your hp is now:')
                     print(hp)
                     x = random.randint(1,3)
+            elif move == "defend":
+                print("X IS:")
+                print(int(x))
 
 print("SHELLPOZO. Try again, or are you a pu-")
