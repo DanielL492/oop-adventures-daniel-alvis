@@ -58,13 +58,13 @@ rheal = 4
 
 
 
-while hp >= 0:
+if hp > 0:
     fight = input('Do you want to fight? ')
     if fight == "yes":
         print('You are fighting the zombie')
         while zhp >= 0:
-            move = input('What move do you want to do? (Ex. attack, defend, heal) ')
-            if move == "attack":
+            move = input('What move do you want to do? (Ex. atk, defe, heal) ')
+            if move == "atk":
                 print("X IS:")
                 print(int(x))
                 if int(x) == 1:
@@ -106,7 +106,7 @@ while hp >= 0:
                     print(hp)
                     zatk = 4
                     x = random.randint(1,3)
-            elif move == "defend":
+            elif move == "defe":
                 print("X IS:")
                 print(int(x))
                 if int(x) == 2 or 3:
@@ -132,6 +132,77 @@ while hp >= 0:
                     print(zhp)
                     zdefe = 5
         print("The zombie has been slain.")
-
-print("SHELLPOZO. Try again, or are you a pu-")
-
+        print("You are fighting the enderman.")
+        while ehp >= 0:
+            move = input('What move do you want to do? (Ex. atk, defe, heal) ')
+            if move == "atk":
+                print("X IS:")
+                print(int(x))
+                if int(x) == 1:
+                    atk = atk - edefe
+                    ehp = ehp - atk
+                    print('Enderman has defended itself.')
+                    print("Enderman hp is now:")
+                    print(ehp)
+                    edefe = 6
+                    atk = 5
+                    x = random.randint(1,3)
+                elif int(x) == 2 or 3:
+                    ehp = ehp - atk
+                    print("Enderman hp is")
+                    print(ehp)
+                    hp = hp - eatk
+                    print('Enderman has hit you')
+                    print('Your hp is now:')
+                    print(hp)
+                    eatk = 6
+                    atk = 5
+                    x = random.randint(1,3)
+            elif move == "heal":
+                print("X IS:")
+                print(int(x))
+                hp = hp + heal
+                print("You have healed. Your hp is now:")
+                print(hp)
+                if int(x) == 1:
+                    print('Enderman has defended itself.')
+                    print("Enderman hp is now:")
+                    print(ehp)
+                    edefe = 6
+                    x = random.randint(1,3)
+                elif int(x) == 2 or 3:
+                    hp = hp - eatk
+                    print('Enderman has hit you')
+                    print('Your hp is now:')
+                    print(hp)
+                    eatk = 6
+                    x = random.randint(1,3)
+            elif move == "defe":
+                print("X IS:")
+                print(int(x))
+                if int(x) == 2 or 3:
+                    eatk = eatk - defe
+                    hp = hp - eatk 
+                    if hp > 20:
+                        hp = 20
+                        print('Enderman has hit you')
+                        print('You defended yourself')
+                        print('Your hp is now:')
+                        print(hp)
+                        eatk = 6
+                    else:
+                        print('Enderman has hit you')
+                        print('You defended yourself')
+                        print('Your hp is now:')
+                        print(hp)
+                        eatk = 6
+                    x = random.randint(1,3)
+                if int(x) == 1:
+                    print('Enderman has defended itself.')
+                    print("Enderman hp is now:")
+                    print(ehp)
+                    edefe = 6
+        print("The enderman has been slain.")
+        print("You are now fighting the ravager.")
+if hp <= 0:
+    print("You have died. SHELLPOZO. Try again, or are you a pu-")
