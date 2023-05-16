@@ -25,17 +25,36 @@ def swor():
         atk = sword
 swor()
 
-y = random.randint(1,20)
-print(y)
+y = random.randint(1,1000)
 def armor():
-    if int(y) >= (1) and int(y) <= (4):
+    if int(y) >= (1) and int(y) <= (200):
+        armor = 3
+        print("You got Leather Armor 20%")
+    if int(y) >= (651) and int(y) <= (800):
         armor = 4
-        print("You got leather armor")
-    elif int(y) >= (5) and int(y) <=(8):
+        print("You got Gold Armor 15%")
+    elif int(y) >= (201) and int(y) <= (350):
         armor = 5
-        print("You got chainmail armour")
+        print("You got Chainmail Armor 15%")
+    elif int(y) >= (351) and int(y) <= (500):
+        armor = 6
+        print("You got Iron Armor 15%")
+    elif int(y) >= (501) and int(y) <= (600):
+        armor = 8
+        print("You got Diamond Armor 10%")
+    elif int(y) >= (601) and int(y) <= (650):
+        armor = 9
+        print("You got Netherite Armor 5%")
+    elif int(y) >= (801) and int(y) <= (900):
+        armor = 1
+        print("No Armor...... SHELL POZO 10%")
+    elif int(y) >= (901) and int(y) <= (999):
+        armor = 7
+        print("You got Emerald...Armor? 9.9%")
+    elif int(y) == (1000):
+        armor = 263319020
+        print("You have obtained ShellPozer (Superior) (Spartan) Armor.... Use it wisely 0.1%")
+    defe = armor
+armor()
 
-
-
-
-
+ 
