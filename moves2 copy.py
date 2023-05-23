@@ -33,24 +33,7 @@ class ravager(mob):
         self.rheal = rheal
     def __str__(self):
         return f"{self.rhp}, {self.ratk}, {self.rdefe}, {self.rheal}"
-
-
-class move:
-    def  __init__(self, name):
-        self.name = name
-class atk(move):
-    def __init__(self, name, dmg):
-        super().__init__(name)
-        self.dmg = int(dmg)
-    def __str__(self):
-        return f"{self.name}, {self.dmg}"
-class defend(move):
-    def __init__(self, name, defe):
-        super().__init__(name)
-        self.defe = int(defe)
-    def __str__(self):
-        return f"{self.name},{self.defe}"
-
+    
 import random
 s = random.randint(1,1000)
 def sword():
@@ -113,7 +96,7 @@ armor()
 hp = 20
 heal = 2
 defe = 6
-atk = 5
+heal = 2
 
 zhp = 16
 zatk = 4
@@ -130,6 +113,7 @@ rhp = 32
 ratk = 10
 rdefe = 8
 rheal = 4
+
 
 
 if hp > 0:
