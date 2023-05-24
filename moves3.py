@@ -1,6 +1,6 @@
 import random
 s = random.randint(1,1000)
-def swor():
+def sword():
     if int(s) >= (1) and int(s) <= (400):
         sword = 4
         print("You got a wooden sword! 40%")
@@ -22,9 +22,9 @@ def swor():
     elif int(s) == 1000:
         sword = 69420
         print("Bro got the UNFRIGGINBELIEVALIST. Use it wisely. 0.1%")
-        atk = sword
-swor()
-
+    atk = sword
+    print(atk)
+sword()
 y = random.randint(1,1000)
 def armor():
     if int(y) >= (1) and int(y) <= (200):
@@ -55,6 +55,5 @@ def armor():
         armor = 263319020
         print("You have obtained ShellPozer (Superior) (Spartan) Armor.... Use it wisely 0.1%")
     defe = armor
+    print(defe)
 armor()
-
- 
