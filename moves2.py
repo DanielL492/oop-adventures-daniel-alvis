@@ -1,5 +1,4 @@
-
-
+from moves import move
 import random
 x = random.randint(1,3)
 
@@ -35,21 +34,7 @@ class ravager(mob):
         return f"{self.rhp}, {self.ratk}, {self.rdefe}, {self.rheal}"
 
 
-class move:
-    def  __init__(self, name):
-        self.name = name
-class atk(move):
-    def __init__(self, name, dmg):
-        super().__init__(name)
-        self.dmg = int(dmg)
-    def __str__(self):
-        return f"{self.name}, {self.dmg}"
-class defend(move):
-    def __init__(self, name, defe):
-        super().__init__(name)
-        self.defe = int(defe)
-    def __str__(self):
-        return f"{self.name},{self.defe}"
+
 
 import random
 s = random.randint(1,1000)
