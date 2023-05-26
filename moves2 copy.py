@@ -65,15 +65,15 @@ class mob:
 class zombie(mob):
     def __init__(self, name, ehp, eatk, edefe):
         super().__init__(name)
-        self.ehp = ehp
-        self.eatk = eatk
-        self.edefe = edefe
+        self.ehp = int(ehp)
+        self.eatk = int(eatk)
+        self.edefe = int(edefe)
     def __str__(self):
         return f"{self.ehp}, {self.eatk}, {self.edefe}"
 class enderman(zombie):
     def __init__(self, name, ehp, eatk, edefe, eheal):
         super().__init__(name, ehp, eatk, edefe)
-        self.eheal = eheal
+        self.eheal = int(eheal)
     def __str__(self):
         return f"{self.ehp}, {self.eatk}, {self.edefe}, {self.eheal}"
 class ravager(enderman):
@@ -100,23 +100,31 @@ if hp > 0:
                 print(int(x))
                 if int(x) == 1:
                     atk = atk - zomb.edefe
-                    zomb.ehp = zomb.ehp - atk
-                    print('Zombie has defended itself.')
-                    print("Zombie hp is now:")
-                    print(zomb.ehp)
-                    zomb.edefe = 5
-                    atk = 5
-                    x = random.randint(1,3)
+                    if atk <= 0:
+                        print('Zombie has defended itself.')
+                        print("Zombie hp is now:")
+                        print(zomb.ehp)
+                        zomb.edefe = 5
+                        atk = sword
+                        x = random.randint(1,3)
+                    else:
+                        zomb.ehp = zomb.ehp - atk
+                        print('Zombie has defended itself.')
+                        print("Zombie hp is now:")
+                        print(zomb.ehp)
+                        zomb.edefe = 5
+                        atk = sword
+                        x = random.randint(1,3)
                 elif int(x) == 2 or 3:
                     zomb.ehp = zomb.ehp - atk
-                    print("Zombie hp is")
+                    print("You have attacked the Zombie. Zombie hp is:")
                     print(zomb.ehp)
                     hp = hp - zomb.eatk
                     print('Zombie has hit you')
                     print('Your hp is now:')
                     print(hp)
                     zomb.eatk = 4
-                    atk = 5
+                    atk = sword
                     x = random.randint(1,3)
             elif move == "heal":
                 print("X IS:")
@@ -142,20 +150,25 @@ if hp > 0:
                 print(int(x))
                 if int(x) == 2 or 3:
                     zomb.eatk = zomb.eatk - defe
-                    hp = hp - zomb.eatk 
-                    if hp > 20:
-                        hp = 20
-                        print('Zombie has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
+                    if zomb.eatk <= 0:
+                        print("You have blocked the zombie's attack.")
                         print(hp)
                         zomb.eatk = 4
                     else:
-                        print('Zombie has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
-                        print(hp)
-                        zomb.eatk = 4
+                        hp = hp - zomb.eatk 
+                        if hp > 20:
+                            hp = 20
+                            print('Zombie has hit you')
+                            print('You defended yourself')
+                            print('Your hp is now:')
+                            print(hp)
+                            zomb.eatk = 4
+                        else:
+                            print('Zombie has hit you')
+                            print('You defended yourself')
+                            print('Your hp is now:')
+                            print(hp)
+                            zomb.eatk = 4
                     x = random.randint(1,3)
                 if int(x) == 1:
                     print('Zombie has defended itself.')
@@ -164,76 +177,6 @@ if hp > 0:
                     zomb.edefe = 5
         print("The zombie has been slain.")
         print("You are fighting the enderman.")
-        while ehp >= 0:
-            move = input('What move do you want to do? (Ex. atk, defe, heal) ')
-            if move == "atk":
-                print("X IS:")
-                print(int(x))
-                if int(x) == 1:
-                    atk = atk - edefe
-                    ehp = ehp - atk
-                    print('Enderman has defended itself.')
-                    print("Enderman hp is now:")
-                    print(ehp)
-                    edefe = 6
-                    atk = 5
-                    x = random.randint(1,3)
-                elif int(x) == 2 or 3:
-                    ehp = ehp - atk
-                    print("Enderman hp is")
-                    print(ehp)
-                    hp = hp - eatk
-                    print('Enderman has hit you')
-                    print('Your hp is now:')
-                    print(hp)
-                    eatk = 6
-                    atk = 5
-                    x = random.randint(1,3)
-            elif move == "heal":
-                print("X IS:")
-                print(int(x))
-                hp = hp + heal
-                print("You have healed. Your hp is now:")
-                print(hp)
-                if int(x) == 1:
-                    print('Enderman has defended itself.')
-                    print("Enderman hp is now:")
-                    print(ehp)
-                    edefe = 6
-                    x = random.randint(1,3)
-                elif int(x) == 2 or 3:
-                    hp = hp - eatk
-                    print('Enderman has hit you')
-                    print('Your hp is now:')
-                    print(hp)
-                    eatk = 6
-                    x = random.randint(1,3)
-            elif move == "defe":
-                print("X IS:")
-                print(int(x))
-                if int(x) == 2 or 3:
-                    eatk = eatk - defe
-                    hp = hp - eatk 
-                    if hp > 20:
-                        hp = 20
-                        print('Enderman has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
-                        print(hp)
-                        eatk = 6
-                    else:
-                        print('Enderman has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
-                        print(hp)
-                        eatk = 6
-                    x = random.randint(1,3)
-                if int(x) == 1:
-                    print('Enderman has defended itself.')
-                    print("Enderman hp is now:")
-                    print(ehp)
-                    edefe = 6
-        print("The enderman has been slain.")
-        print("You are now fighting the ravager.")
+
 if hp <= 0:
     print("You have died. SHELLPOZO. Try again, or are you a pu-")
