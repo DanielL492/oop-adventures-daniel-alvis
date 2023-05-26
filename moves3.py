@@ -1,4 +1,4 @@
-class mob:
+""" class mob:
     def __init__(self, name):
         self.name = name
 class zombie(mob):
@@ -81,7 +81,7 @@ elif int(y) == (1000):
     print("You have obtained ShellPozer (Superior) (Spartan) Armor.... Use it wisely 0.1%")
 defe = armor
 print(defe)
-
+ """
 
 
 
