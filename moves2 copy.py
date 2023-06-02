@@ -126,7 +126,7 @@ if hp > 0:
                     zomb.eatk = 4
                     atk = sword
                     x = random.randint(1,3)
-            elif move == "heal":
+            if move == "heal":
                 print("X IS:")
                 print(int(x))
                 hp = hp + heal
@@ -145,37 +145,29 @@ if hp > 0:
                     print(hp)
                     zomb.eatk = 4
                     x = random.randint(1,3)
-            elif move == "defe":
+            if move == "defe":
                 print("X IS:")
                 print(int(x))
-                if int(x) == 2 or 3:
-                    zomb.eatk = zomb.eatk - defe
-                    if zomb.eatk <= 0:
-                        print("You have blocked the zombie's attack.")
-                        print(hp)
-                        zomb.eatk = 4
-                    else:
-                        hp = hp - zomb.eatk 
-                        if hp > 20:
-                            hp = 20
-                            print('Zombie has hit you')
-                            print('You defended yourself')
-                            print('Your hp is now:')
-                            print(hp)
-                            zomb.eatk = 4
-                        else:
-                            print('Zombie has hit you')
-                            print('You defended yourself')
-                            print('Your hp is now:')
-                            print(hp)
-                            zomb.eatk = 4
-                    x = random.randint(1,3)
-                elif int(x) == 1:
+                if int(x) == 1:
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zomb.ehp)
                     zomb.edefe = 5
-"""         if zomb.ehp <= 0:
+                elif int(x) == 2 or 3:
+                    zomb.eatk = zomb.eatk - defe
+                    if zomb.eatk <= 0:
+                        print("You have blocked the zombie's attack. You have lost no health.")
+                        print(hp)
+                        zomb.eatk = 4
+                    elif zomb.eatk >= 1:
+                        hp = hp - zomb.eatk 
+                        print('Zombie has hit you')
+                        print('You defended yourself')
+                        print('Your hp is now:')
+                        print(hp)
+                        zomb.eatk = 4
+            x = random.randint(1,3)
+        if zomb.ehp <= 0:
             print("The zombie has been slain.")
             print("You are now fighting the enderman. Getting harder.")
             while end.ehp > 0:
@@ -233,6 +225,11 @@ if hp > 0:
                 elif move == "defe":
                     print("X IS:")
                     print(int(x))
+                    if int(x) == 1:
+                        print('Zombie has defended itself.')
+                        print("Zombie hp is now:")
+                        print(end.ehp)
+                        end.edefe = 5
                     if int(x) == 2 or 3:
                         end.eatk = end.eatk - defe
                         if end.eatk <= 0:
@@ -254,12 +251,7 @@ if hp > 0:
                                 print('Your hp is now:')
                                 print(hp)
                                 end.eatk = 4
-                        x = random.randint(1,3)
-                    if int(x) == 1:
-                        print('Zombie has defended itself.')
-                        print("Zombie hp is now:")
-                        print(end.ehp)
-                        end.edefe = 5
-             """
+                    x = random.randint(1,3)
+            
 if hp <= 0:
     print("You have died. El bozo. Get better.")
