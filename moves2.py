@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-=======
 from moves import move
 import random
 x = random.randint(1,3)
 
 
->>>>>>> Mobs
 class mob:
     def __init__(self, name):
         self.name = name
@@ -13,11 +10,7 @@ class zombie(mob):
     def __init__(self, name, zhp, zatk, zdefe):
         super().__init__(name)
         self.zhp = zhp
-<<<<<<< HEAD
-        self.zatk = zatk 
-=======
         self.zatk = zatk
->>>>>>> Mobs
         self.zdefe = zdefe
     def __str__(self):
         return f"{self.zhp}, {self.zatk}, {self.zdefe}"
@@ -34,51 +27,11 @@ class ravager(mob):
     def __init__(self, name, rhp, ratk, rdefe, rheal):
         super().__init__(name)
         self.rhp = rhp
-<<<<<<< HEAD
-        self.ratk = ratk 
-=======
         self.ratk = ratk
->>>>>>> Mobs
         self.rdefe = rdefe
         self.rheal = rheal
     def __str__(self):
         return f"{self.rhp}, {self.ratk}, {self.rdefe}, {self.rheal}"
-<<<<<<< HEAD
-    
-hp = 20
-atk = 4
-defe = 6
-heal = 3
-
-attack = 1
-defend = 2
-heal = 3
-
-zhp = 15
-zatk = 2
-zdefe = 4
-
-ehp = 25 
-eatk = 4
-edefe = 5
-eheal = 1
-
-rhp = 30
-ratk = 8
-rdefe = 6
-rheal = 2
-
-move = input('What move do you want to do? (Ex. attack, defend, heal) ')
-if move == "attack":
-    zhp = zhp - attack
-    print("Zombie hp is")
-    print(zhp)
-elif move == "heal":
-    hp = hp + heal
-    print(hp)
-
-    
-=======
 
 
 
@@ -217,8 +170,7 @@ if hp > 0:
                 print(int(x))
                 if int(x) == 2 or 3:
                     zatk = zatk - defe
-                    hp = hp - zatk 
-                    if hp > 20:
+                    if z > 20:
                         hp = 20
                         print('Zombie has hit you')
                         print('You defended yourself')
@@ -232,7 +184,7 @@ if hp > 0:
                         print(hp)
                         zatk = 4
                     x = random.randint(1,3)
-                if int(x) == 1:
+                elif int(x) == 1:
                     print('Zombie has defended itself.')
                     print("Zombie hp is now:")
                     print(zhp)
@@ -312,4 +264,3 @@ if hp > 0:
         print("You are now fighting the ravager.")
 if hp <= 0:
     print("You have died. SHELLPOZO. Try again, or are you a pu-")
->>>>>>> Mobs
