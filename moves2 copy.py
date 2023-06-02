@@ -89,7 +89,7 @@ zomb = zombie('Zombie', '16', '4', '5')
 end = enderman('Endermen', '26', '6', '6', '2')
 rav = ravager('Ravager', '32', '10', '8', '4')
 
-while hp > 0:
+while hp >= 0:
     fight = input('Do you want to fight? (Ex. Y or N) ')
     if fight == "Y":
         print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
@@ -272,6 +272,5 @@ while hp > 0:
                             print(hp)
                             zomb.eatk = 4
                 x = random.randint(1,3)
-    if hp <= 0:
-        print("You have died. El bozo. Get better.")
+print("You have died. El bozo. Get better.")
 
