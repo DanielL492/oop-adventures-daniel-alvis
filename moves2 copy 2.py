@@ -2,7 +2,78 @@
 import random
 x = random.randint(1,3)
 
-
+def end_fight():
+    hp = 20 
+    heal = 2
+    atk = sword
+    defe = armor
+    end = enderman('Endermen', '26', '6', '6')
+    move = input("What move do you want to do? (Ex. atk, defe, heal)  ")
+    if move == "atk":
+        print("X IS:")
+        print(int(x))
+        if int(x) == 1:
+            atk = atk - end.edefe
+            end.ehp = end.ehp - atk
+            print('Enderman has defended itself.')
+            print("Enderman hp is now:")
+            print(end.ehp)
+            end.edefe = 6
+            atk = sword
+            x = random.randint(1,3)
+        elif int(x) == 2 or 3:
+            end.ehp = end.ehp - atk
+            print("Enderman hp is")
+            print(end.ehp)
+            hp = hp - end.eatk
+            print('Enderman has hit you')
+            print('Your hp is now:')
+            print(hp)
+            end.eatk = 6
+            atk = sword
+            x = random.randint(1,3)
+    elif move == "heal":
+        print("X IS:")
+        print(int(x))
+        hp = hp + heal
+        print("You have healed. Your hp is now:")
+        print(hp)
+        if int(x) == 1:
+            print('Enderman has defended itself.')
+            print("Enderman hp is now:")
+            print(end.ehp)
+            end.edefe = 6
+            x = random.randint(1,3)
+        elif int(x) == 2 or 3:
+            hp = hp - end.eatk
+            print('Enderman has hit you')
+            print('Your hp is now:')
+            print(hp)
+            eatk = 6
+            x = random.randint(1,3)
+    elif move == "defe":
+            print("X IS:")
+            print(int(x))
+            if int(x) == 2 or 3:
+                end.eatk = end.eatk - defe
+                hp = hp - eatk 
+                if hp > 20:
+                    hp = 20
+                    print('Enderman has hit you')
+                    print('You defended yourself')
+                    print('Your hp is now:')
+                    print(hp)
+                    end.eatk = 6
+                else:
+                    print('Enderman has hit you')
+                    print('You defended yourself')
+                    print('Your hp is now:')
+                    print(hp)
+                    end.eatk = 6
+                    x = random.randint(1,3)
+            if int(x) == 1:
+                print('Both of you defended. No hp changes.')
+                x = random.randint(1,3)
 def zomb_fight():
    hp = 20
    heal = 2
@@ -175,16 +246,15 @@ class zombie(mob):
    def __str__(self):
        return f"{self.ehp}, {self.eatk}, {self.edefe}"
 class enderman(zombie):
-   def __init__(self, name, ehp, eatk, edefe, eheal):
+   def __init__(self, name, ehp, eatk, edefe):
        super().__init__(name, ehp, eatk, edefe)
-       self.eheal = int(eheal)
    def __str__(self):
-       return f"{self.ehp}, {self.eatk}, {self.edefe}, {self.eheal}"
-class ravager(enderman):
-   def __init__(self, name, ehp, eatk, edefe, eheal):
-       super().__init__(name, ehp, eatk, edefe, eheal)
+       return f"{self.ehp}, {self.eatk}, {self.edefe}"
+class ravager(zombie):
+   def __init__(self, name, ehp, eatk, edefe):
+       super().__init__(name, ehp, eatk, edefe)
    def __str__(self):
-       return f"{self.ehp}, {self.eatk}, {self.edefe}, {self.eheal}"
+       return f"{self.ehp}, {self.eatk}, {self.edefe}"
 
 
 hp = 20
@@ -192,22 +262,21 @@ heal = 2
 
 
 zomb = zombie('Zombie', '16', '4', '5')
-end = enderman('Endermen', '26', '6', '6', '2')
-rav = ravager('Ravager', '32', '10', '8', '4')
+end = enderman('Endermen', '26', '6', '6')
+rav = ravager('Ravager', '32', '10', '8')
 
 
 fight = input('Do you want to fight? (Ex. Y or N) ')
-while fight == "Y":
-   if hp > 0:
-       print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
-       zomb_fight()
-       if zomb.ehp <= 0:
-           print("The zombie has been slain.")
-           print("You are now fighting the enderman. Getting harder.")
-   elif hp <= 0:
-       print("You have died. El bozo. Get better.")
-       break
-       """ while end.ehp > 0:
+if fight == "Y":
+    if hp > 0:
+        print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
+        while zomb.ehp >= 0:
+            zomb_fight()
+        print("The zombie has been slain.")
+        print("You are now fighting the enderman. Getting harder.")
+        end_fight()
+    print("You have died. El bozo. Get better.")
+""" while end.ehp > 0:
                    move = input('What move do you want to do? (Ex. atk, defe, heal) ')
                    if move == "atk":
                        print("X IS:")
