@@ -1,16 +1,21 @@
-
 import random
 x = random.randint(1,3)
 
 
 def zomb_fight():
-   hp = 20
+   print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
+   hp = 5
    heal = 2
+   zend = 0
+
    atk = sword
    defe = armor
    zomb = zombie('Zombie', '16', '4', '5')
    x = random.randint(1,3)
    while zomb.ehp > 0:
+       if hp <= 0:
+           print("El Bozo You died")
+           break
        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
        if move == "atk":
                print("X IS:")
@@ -98,6 +103,11 @@ def zomb_fight():
                        print(hp)
                        zomb.eatk = 4
                x = random.randint(1,3)
+   if zomb.ehp <= 0:
+    print("The zombie has been slain.")
+    print("You are now fighting the enderman. Getting harder.")
+   
+       
   
 
 
@@ -187,7 +197,7 @@ class ravager(enderman):
        return f"{self.ehp}, {self.eatk}, {self.edefe}, {self.eheal}"
 
 
-hp = 20
+hp = 2
 heal = 2
 
 
@@ -197,17 +207,15 @@ rav = ravager('Ravager', '32', '10', '8', '4')
 
 
 fight = input('Do you want to fight? (Ex. Y or N) ')
-while fight == "Y":
-   if hp > 0:
-       print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
-       zomb_fight()
-       if zomb.ehp <= 0:
-           print("The zombie has been slain.")
-           print("You are now fighting the enderman. Getting harder.")
-   elif hp <= 0:
-       print("You have died. El bozo. Get better.")
-       break
-       """ while end.ehp > 0:
+if fight == "Y":
+    while zomb.ehp > 0:
+        zomb_fight()
+        
+while hp <= 0:  
+    print("You have died. El bozo. Get better.")
+    break
+
+""" while end.ehp > 0:
                    move = input('What move do you want to do? (Ex. atk, defe, heal) ')
                    if move == "atk":
                        print("X IS:")
