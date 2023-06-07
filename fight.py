@@ -100,6 +100,9 @@ def zomb_fight():
                    zomb.eatk = 4
                    atk = sword
                    x = random.randint(1,3)
+               if playr.hp <= 0:
+                    print('l bozo. u died')
+                    break
        if move == "heal":
                print("X IS:")
                print(int(x))
@@ -135,6 +138,9 @@ def zomb_fight():
                        print(playr.hp)
                        zomb.eatk = 4
                    x = random.randint(1,3)
+               if playr.hp <= 0:
+                    print('l bozo. u died')
+                    break
        if move == "defe":
                print("X IS:")
                print(int(x))
@@ -154,8 +160,11 @@ def zomb_fight():
                        print(playr.hp)
                        zomb.eatk = 4
                x = random.randint(1,3)
+               if playr.hp <= 0:
+                    print('l bozo. u died')
+                    break
    if zomb.ehp <= 0:
-    print("The zombie has been slain.")
+    print("The zombie has been slain. Hp restored to max.")
     print("You are now fighting the enderman. Getting harder.")
 
 def end_fight():
@@ -219,34 +228,30 @@ def end_fight():
             if playr.hp <= 0:
                 print('l bozo. u died')
                 break
-        elif move == "defe":
-                print("X IS:")
-                print(int(x))
-                if int(x) == 2 or 3:
-                    end.eatk = end.eatk - defe
-                    playr.hp = playr.hp - end.eatk
-                    if playr.hp > 20:
-                        playr.hp = 20
-                        print('Enderman has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
-                        print(playr.hp)
-                        end.eatk = 6
-                    else:
-                        print('Enderman has hit you')
-                        print('You defended yourself')
-                        print('Your hp is now:')
-                        print(playr.hp)
-                        end.eatk = 6
-                        x = random.randint(1,3)
-                if int(x) == 1:
-                    print('Both of you defended. No hp changes.')
-                    x = random.randint(1,3)
-                if playr.hp <= 0:
+        if move == "defe":
+               print("X IS:")
+               print(int(x))
+               if int(x) == 1:
+                   print('Both of you had defended. No hp changes.')
+                   zomb.edefe = 5
+               elif int(x) == 2 or 3:
+                   zomb.eatk = zomb.eatk - defe
+                   if zomb.eatk <= 0:
+                       print("You have blocked the zombie's attack. You have lost no health.")
+                       zomb.eatk = 4
+                   elif zomb.eatk >= 1:
+                       playr.hp = playr.hp - zomb.eatk
+                       print('Zombie has hit you')
+                       print('You defended yourself')
+                       print('Your hp is now:')
+                       print(playr.hp)
+                       zomb.eatk = 4
+               x = random.randint(1,3)
+               if playr.hp <= 0:
                     print('l bozo. u died')
                     break
     if end.ehp <= 0:
-        print("The enderman has been defeated.")
+        print("The enderman has been defeated. Hp restored to max.")
         print("Your fighting the ravager, gl my guy.")
 
 def rav_fight():

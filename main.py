@@ -71,10 +71,14 @@ while fight == "Y":
         print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
         if zomb.ehp > 0:
             zomb_fight()
-            if end.ehp > 0:
-                end_fight()
-                if rav.ehp > 0:
-                    rav_fight()
-    else:
-        print("L bozo. U died")
-        break
+        elif playr.hp <= 0:
+            print("L bozo. U died")
+        if end.ehp > 0:
+            end_fight()
+        elif playr.hp <= 0:
+            print("L bozo. U died")
+            break
+        if rav.ehp > 0:
+            rav_fight()
+        elif playr.hp <= 0:
+            print("L bozo. U died")
