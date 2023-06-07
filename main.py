@@ -1,10 +1,7 @@
 import random
-from classes import player
-from classes import zombie
-from classes import enderman
-from classes import ravager
+from fight import zomb_fight, end_fight, rav_fight
+from classes import player, zombie, enderman, ravager
 
-x = random.randint(1,3)
 s = random.randint(1,1000)
 if int(s) >= (1) and int(s) <= (400):
     sword = 4
@@ -25,10 +22,11 @@ elif int(s) >= (801) and int(s) <= (999):
     sword = 6
     print("You got a iron sword! 19.9%")
 elif int(s) == 1000:
-        sword = 69420
-        print("Bro got the UNFRIGGINBELIEVALIST. Use it wisely. 0.1%")
+    sword = 69420
+    print("Bro got the UNFRIGGINBELIEVALIST. Use it wisely. 0.1%")
 atk = sword
 print(atk)
+
 y = random.randint(1,1000)
 if int(y) >= (1) and int(y) <= (200):
     armor = 3
@@ -66,19 +64,17 @@ zomb = zombie('Zombie', '16', '4', '5')
 end = enderman('Endermen', '26', '6', '6')
 rav = ravager('Ravager', '32', '10', '8')
 
+
 fight = input('Do you want to fight? (Ex. Y or N) ')
-if fight == "Y":
+while fight == "Y":
     if playr.hp > 0:
         print("You are fighting the zombie. Like its basically impossible to die here, just don't be bad.")
         if zomb.ehp > 0:
             zomb_fight()
-            if zomb.ehp <= 0:
+            if end.ehp > 0:
                 end_fight()
-                if end.ehp <= 0:
+                if rav.ehp > 0:
                     rav_fight()
-
-
-
-
-
-
+    else:
+        print("L bozo. U died")
+        break

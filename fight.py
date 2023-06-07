@@ -349,3 +349,8 @@ def rav_fight():
                     break
    if rav.ehp <= 0:
     print("GG's bro. You won!")
+
+playr = player('player', '20', '2')
+zomb = zombie('Zombie', '16', '4', '5')
+end = enderman('Endermen', '26', '6', '6')
+rav = ravager('Ravager', '32', '10', '8')
