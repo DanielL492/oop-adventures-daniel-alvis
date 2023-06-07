@@ -62,8 +62,8 @@ defe = armor
 print(defe)
 
 def zomb_fight():
-   atk = 4
-   defe = 5
+   atk = sword
+   defe = armor
    zomb = zombie('Zombie', '16', '4', '5')
    playr = player('Player', '20', '2')
    x = random.randint(1,3)
@@ -196,8 +196,13 @@ def end_fight():
             print("X IS:")
             print(int(x))
             playr.hp = playr.hp + playr.heal
-            print("You have healed. Your hp is now:")
-            print(playr.hp)
+            if playr.hp > 20:
+                   playr.hp = 20
+                   print("You have healed. Your hp is now:")
+                   print(playr.hp)
+            else:
+                print("You have healed. Your hp is now:")
+                print(playr.hp)
             if int(x) == 1:
                 print('Enderman has defended itself.')
                 print("Enderman hp is now:")
@@ -219,7 +224,7 @@ def end_fight():
                 print(int(x))
                 if int(x) == 2 or 3:
                     end.eatk = end.eatk - defe
-                    playr.hp = playr.hp - eatk
+                    playr.hp = playr.hp - end.eatk
                     if playr.hp > 20:
                         playr.hp = 20
                         print('Enderman has hit you')
