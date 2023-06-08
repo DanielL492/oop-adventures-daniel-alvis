@@ -7,22 +7,22 @@ from classes import ravager
 
 s = random.randint(1,1000)
 if int(s) >= (1) and int(s) <= (400):
-    sword = 4
+    sword = 400
     print("You got a wooden sword! 40%")
 elif int(s) >= (501) and int(s) <= (550):
-    sword = 1
+    sword = 100
     print("You got your fist..... SHELL POZO 5%")
 elif int(s) >= (551) and int(s) <= (750):
-    sword = 5
+    sword = 500
     print("You got a stone sword! 20%")
 elif int(s) >= (401) and int(s) <= (500):
-    sword = 7
+    sword = 700
     print("You got a diamond sword! 10%")
 elif int(s) >= (751) and int(s) <= (800):
-    sword = 9
+    sword = 900
     print("You got a netherite sword! 5%")
 elif int(s) >= (801) and int(s) <= (999):
-    sword = 6
+    sword = 600
     print("You got a iron sword! 19.9%")
 elif int(s) == 1000:
     sword = 69420
@@ -175,6 +175,7 @@ def end_fight():
     x = random.randint(1,3)
     while end.ehp > 0:
         move = input("What move do you want to do? (Ex. atk, defe, heal)  ")
+        end.eatk = 6
         if move == "atk":
             print("X IS:")
             print(int(x))
@@ -223,7 +224,7 @@ def end_fight():
                 print('Enderman has hit you')
                 print('Your hp is now:')
                 print(playr.hp)
-                eatk = 6
+                end.eatk = 6
                 x = random.randint(1,3)
             if playr.hp <= 0:
                 print('l bozo. u died')
@@ -233,19 +234,20 @@ def end_fight():
                print(int(x))
                if int(x) == 1:
                    print('Both of you had defended. No hp changes.')
-                   zomb.edefe = 5
+                   end.edefe = 6
                elif int(x) == 2 or 3:
-                   zomb.eatk = zomb.eatk - defe
-                   if zomb.eatk <= 0:
-                       print("You have blocked the zombie's attack. You have lost no health.")
-                       zomb.eatk = 4
-                   elif zomb.eatk >= 1:
-                       playr.hp = playr.hp - zomb.eatk
-                       print('Zombie has hit you')
+                   end.eatk = end.eatk - defe
+                   if end.eatk <= 0:
+                       print("You have blocked the enderman's attack. You have lost no health.")
+                       print(playr.hp)
+                       end.eatk = 6
+                   elif end.eatk >= 1:
+                       playr.hp = playr.hp - end.eatk
+                       print('Enderman has hit you')
                        print('You defended yourself')
                        print('Your hp is now:')
                        print(playr.hp)
-                       zomb.eatk = 4
+                       end.eatk = 6
                x = random.randint(1,3)
                if playr.hp <= 0:
                     print('l bozo. u died')
@@ -271,7 +273,7 @@ def rav_fight():
                        print('Ravager has blocked your attack.')
                        print("Ravager hp is now:")
                        print(rav.ehp)
-                       rav.edefe = 5
+                       rav.edefe = 8
                        atk = sword
                        x = random.randint(1,3)
                    else:
@@ -279,7 +281,7 @@ def rav_fight():
                        print('Ravager has blocked your attack.')
                        print("Ravager hp is now:")
                        print(rav.ehp)
-                       rav.edefe = 5
+                       rav.edefe = 8
                        atk = sword
                        x = random.randint(1,3)
                elif int(x) == 2 or 3:
@@ -290,7 +292,7 @@ def rav_fight():
                    print('Ravager has hit you')
                    print('Your hp is now:')
                    print(playr.hp)
-                   rav.eatk = 4
+                   rav.eatk = 10
                    atk = sword
                    x = random.randint(1,3)
                if playr.hp <= 0:
@@ -323,13 +325,13 @@ def rav_fight():
                        print('Ravager has defended itself.')
                        print("Ravager hp is now:")
                        print(rav.ehp)
-                       rav.edefe = 5
+                       rav.edefe = 8
                    elif int(x) == 2 or 3:
                        playr.playr.hp = hp - rav.eatk
                        print('Ravager has hit you')
                        print('Your hp is now:')
                        print(playr.hp)
-                       rav.eatk = 4
+                       rav.eatk = 10
                    x = random.randint(1,3)
                if playr.hp <= 0:
                     print('l bozo. u died')
@@ -339,20 +341,20 @@ def rav_fight():
                print(int(x))
                if int(x) == 1:
                    print('Both of you had defended. No hp changes.')
-                   rav.edefe = 5
+                   rav.edefe = 8
                elif int(x) == 2 or 3:
                    rav.eatk = rav.eatk - defe
                    if rav.eatk <= 0:
                        print("You have blocked the ravager's attack. You have lost no health.")
                        print(playr.hp)
-                       rav.eatk = 4
+                       rav.eatk = 10
                    elif rav.eatk >= 1:
                        playr.hp = playr.hp - rav.eatk
                        print('Ravager has hit you')
                        print('You defended yourself')
                        print('Your hp is now:')
                        print(playr.hp)
-                       rav.eatk = 4
+                       rav.eatk = 10
                x = random.randint(1,3)
                if playr.hp <= 0:
                     print('l bozo. u died')
