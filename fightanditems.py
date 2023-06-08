@@ -4,6 +4,15 @@ from classes import zombie
 from classes import enderman
 from classes import ravager
 
+class a:
+    def __init__(self, ame):
+        self.ame = ame
+class b(a):
+    def __init__(self, ame, c):
+        super().__init__(ame)
+        self.c = int(c)
+    def __str__(self):
+        return f"{self.ame}, {self.c}"
 
 s = random.randint(1,1000)
 if int(s) >= (1) and int(s) <= (400):
@@ -67,6 +76,7 @@ def zomb_fight():
    zomb = zombie('Zombie', '16', '4', '5')
    playr = player('Player', '20', '4')
    x = random.randint(1,3)
+   we = b('b','2')
    while zomb.ehp > 0:
        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
        if move == "atk":
@@ -99,6 +109,7 @@ def zomb_fight():
                    atk = sword
                    x = random.randint(1,3)
                if playr.hp <= 0:
+                    we.c = 3
                     print('l bozo. u died')
                     break
        if move == "heal":
@@ -135,6 +146,7 @@ def zomb_fight():
                        zomb.eatk = 4
                    x = random.randint(1,3)
                if playr.hp <= 0:
+                    we.c = 3
                     print('l bozo. u died')
                     break
        if move == "defe":
@@ -155,6 +167,7 @@ def zomb_fight():
                        zomb.eatk = 4
                x = random.randint(1,3)
                if playr.hp <= 0:
+                    we.c = 3
                     print('l bozo. u died')
                     break
    if zomb.ehp <= 0:
@@ -167,7 +180,10 @@ def end_fight():
     playr = player('Player', '20', '4')
     end = enderman('Endermen', '26', '6', '6')
     x = random.randint(1,3)
+    we = b('b','2')
     while end.ehp > 0:
+        if we.c == 3:
+            break
         move = input("What move do you want to do? (Ex. atk, defe, heal)  ")
         end.eatk = 6
         if move == "atk":
@@ -192,6 +208,7 @@ def end_fight():
                 atk = sword
                 x = random.randint(1,3)
             if playr.hp <= 0:
+                we.c = 3
                 print('l bozo. u died')
                 break
         elif move == "heal":
@@ -217,6 +234,7 @@ def end_fight():
                 end.eatk = 6
                 x = random.randint(1,3)
             if playr.hp <= 0:
+                we.c = 3
                 print('l bozo. u died')
                 break
         if move == "defe":
@@ -238,6 +256,7 @@ def end_fight():
                        end.eatk = 6
                x = random.randint(1,3)
                if playr.hp <= 0:
+                    we.c = 3
                     print('l bozo. u died')
                     break
     if end.ehp <= 0:
@@ -250,9 +269,12 @@ def rav_fight():
    defe = armor
    rav = ravager('Ravager', '32', '10', '8')
    x = random.randint(1,3)
+   we = b('b','2')
    while rav.ehp > 0:
-       move = input('What move do you want to do? (Ex. atk, defe, heal) ')
-       if move == "atk":
+        if we.c == 3:
+            break
+        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
+        if move == "atk":
                if int(x) == 1:
                    atk = atk - rav.edefe
                    if atk <= 0:
@@ -284,7 +306,7 @@ def rav_fight():
                if playr.hp <= 0:
                     print('l bozo. u died')
                     break
-       if move == "heal":
+        if move == "heal":
                print("X IS:")
                print(int(x))
                playr.hp = playr.hp + playr.heal
@@ -322,7 +344,7 @@ def rav_fight():
                if playr.hp <= 0:
                     print('l bozo. u died')
                     break
-       if move == "defe":
+        if move == "defe":
                print("X IS:")
                print(int(x))
                if int(x) == 1:
