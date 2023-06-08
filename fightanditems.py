@@ -7,22 +7,22 @@ from classes import ravager
 
 s = random.randint(1,1000)
 if int(s) >= (1) and int(s) <= (400):
-    sword = 400
+    sword = 4
     print("You got a wooden sword! 40%")
 elif int(s) >= (501) and int(s) <= (550):
-    sword = 100
+    sword = 1
     print("You got your fist..... SHELL POZO 5%")
 elif int(s) >= (551) and int(s) <= (750):
-    sword = 500
+    sword = 5
     print("You got a stone sword! 20%")
 elif int(s) >= (401) and int(s) <= (500):
-    sword = 700
+    sword = 7
     print("You got a diamond sword! 10%")
 elif int(s) >= (751) and int(s) <= (800):
-    sword = 900
+    sword = 9
     print("You got a netherite sword! 5%")
 elif int(s) >= (801) and int(s) <= (999):
-    sword = 600
+    sword = 6
     print("You got a iron sword! 19.9%")
 elif int(s) == 1000:
     sword = 69420
@@ -70,8 +70,6 @@ def zomb_fight():
    while zomb.ehp > 0:
        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
        if move == "atk":
-               print("X IS:")
-               print(int(x))
                if int(x) == 1:
                    atk = atk - zomb.edefe
                    if atk <= 0:
@@ -104,8 +102,6 @@ def zomb_fight():
                     print('l bozo. u died')
                     break
        if move == "heal":
-               print("X IS:")
-               print(int(x))
                playr.hp = playr.hp + playr.heal
                if playr.hp > 20:
                    playr.hp = 20
@@ -142,8 +138,6 @@ def zomb_fight():
                     print('l bozo. u died')
                     break
        if move == "defe":
-               print("X IS:")
-               print(int(x))
                if int(x) == 1:
                    print('Both of you had defended. No hp changes.')
                    zomb.edefe = 5
@@ -177,8 +171,6 @@ def end_fight():
         move = input("What move do you want to do? (Ex. atk, defe, heal)  ")
         end.eatk = 6
         if move == "atk":
-            print("X IS:")
-            print(int(x))
             if int(x) == 1:
                 atk = atk - end.edefe
                 end.ehp = end.ehp - atk
@@ -203,8 +195,6 @@ def end_fight():
                 print('l bozo. u died')
                 break
         elif move == "heal":
-            print("X IS:")
-            print(int(x))
             playr.hp = playr.hp + playr.heal
             if playr.hp > 20:
                    playr.hp = 20
@@ -230,8 +220,6 @@ def end_fight():
                 print('l bozo. u died')
                 break
         if move == "defe":
-               print("X IS:")
-               print(int(x))
                if int(x) == 1:
                    print('Both of you had defended. No hp changes.')
                    end.edefe = 6
@@ -265,8 +253,6 @@ def rav_fight():
    while rav.ehp > 0:
        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
        if move == "atk":
-               print("X IS:")
-               print(int(x))
                if int(x) == 1:
                    atk = atk - rav.edefe
                    if atk <= 0:
