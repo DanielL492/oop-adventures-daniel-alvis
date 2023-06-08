@@ -1,7 +1,7 @@
 from fightanditems import zomb_fight, end_fight, rav_fight
 from classes import player, zombie, enderman, ravager
 
-playr = player('player', '20', '2')
+playr = player('player', '20', '4')
 zomb = zombie('Zombie', '16', '4', '5')
 end = enderman('Endermen', '26', '6', '6')
 rav = ravager('Ravager', '32', '10', '8')

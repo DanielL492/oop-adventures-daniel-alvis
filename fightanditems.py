@@ -65,7 +65,7 @@ def zomb_fight():
    atk = sword
    defe = armor
    zomb = zombie('Zombie', '16', '4', '5')
-   playr = player('Player', '20', '2')
+   playr = player('Player', '20', '4')
    x = random.randint(1,3)
    while zomb.ehp > 0:
        move = input('What move do you want to do? (Ex. atk, defe, heal) ')
@@ -164,7 +164,7 @@ def zomb_fight():
 def end_fight():
     atk = sword
     defe = armor
-    playr = player('Player', '20', '2')
+    playr = player('Player', '20', '4')
     end = enderman('Endermen', '26', '6', '6')
     x = random.randint(1,3)
     while end.ehp > 0:
@@ -245,7 +245,7 @@ def end_fight():
         print("Your fighting the ravager, gl my guy.")
 
 def rav_fight():
-   playr = player('player', '20', '2')
+   playr = player('Player', '20', '4')
    atk = sword
    defe = armor
    rav = ravager('Ravager', '32', '10', '8')
@@ -313,7 +313,7 @@ def rav_fight():
                        print(rav.ehp)
                        rav.edefe = 8
                    elif int(x) == 2 or 3:
-                       playr.playr.hp = hp - rav.eatk
+                       playr.hp = hp - rav.eatk
                        print('Ravager has hit you')
                        print('Your hp is now:')
                        print(playr.hp)
@@ -348,7 +348,7 @@ def rav_fight():
    if rav.ehp <= 0:
     print("GG's bro. You won!")
 
-playr = player('player', '20', '2')
+playr = player('player', '20', '4')
 zomb = zombie('Zombie', '16', '4', '5')
 end = enderman('Endermen', '26', '6', '6')
 rav = ravager('Ravager', '32', '10', '8')
