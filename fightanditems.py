@@ -4,9 +4,6 @@ from classes import zombie
 from classes import enderman
 from classes import ravager
 
-
-
-
 s = random.randint(1,1000)
 if int(s) >= (1) and int(s) <= (400):
    sword = 4
@@ -268,7 +265,7 @@ def rav_fight():
   playr = player('Player', '20', '4')
   atk = sword
   defe = armor
-  rav = ravager('Ravager', '32', '10', '8')
+  rav = ravager('Ravager', '32', '9', '6')
   x = random.randint(1,3)
   while rav.ehp > 0:
       move = input('What move do you want to do? (Ex. atk, defe, heal) ')
@@ -316,13 +313,13 @@ def rav_fight():
                       print('Ravager has defended itself.')
                       print("Ravager hp is now:")
                       print(rav.ehp)
-                      rav.edefe = 8
+                      rav.edefe = 6
                   elif int(x) == 2 or 3:
                       hp = playr.hp - rav.eatk
                       print('Ravager has hit you')
                       print('Your hp is now:')
                       print(playr.hp)
-                      rav.eatk = 10
+                      rav.eatk = 9
                   x = random.randint(1,3)
               else:
                   print("You have healed. Your hp is now:")
@@ -331,13 +328,13 @@ def rav_fight():
                       print('Ravager has defended itself.')
                       print("Ravager hp is now:")
                       print(rav.ehp)
-                      rav.edefe = 8
+                      rav.edefe = 6
                   elif int(x) == 2 or 3:
                       playr.hp = hp - rav.eatk
                       print('Ravager has hit you')
                       print('Your hp is now:')
                       print(playr.hp)
-                      rav.eatk = 10
+                      rav.eatk = 9
                   x = random.randint(1,3)
               if playr.hp <= 0:
                    print('l bozo. u died')
@@ -347,20 +344,20 @@ def rav_fight():
               print(int(x))
               if int(x) == 1:
                   print('Both of you had defended. No hp changes.')
-                  rav.edefe = 8
+                  rav.edefe = 6
               elif int(x) == 2 or 3:
                   rav.eatk = rav.eatk - defe
                   if rav.eatk <= 0:
                       print("You have blocked the ravager's attack. You have lost no health.")
                       print(playr.hp)
-                      rav.eatk = 10
+                      rav.eatk = 9
                   elif rav.eatk >= 1:
                       playr.hp = playr.hp - rav.eatk
                       print('Ravager has hit you')
                       print('You defended yourself')
                       print('Your hp is now:')
                       print(playr.hp)
-                      rav.eatk = 10
+                      rav.eatk = 9
               x = random.randint(1,3)
               if playr.hp <= 0:
                    print('l bozo. u died')
@@ -372,4 +369,4 @@ def rav_fight():
 playr = player('player', '20', '4')
 zomb = zombie('Zombie', '16', '4', '5')
 end = enderman('Endermen', '26', '6', '6')
-rav = ravager('Ravager', '32', '10', '8')
+rav = ravager('Ravager', '32', '9', '6')
